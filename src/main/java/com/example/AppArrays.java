@@ -22,7 +22,22 @@ public class AppArrays {
     double matrix[][] = {{10, 20, 30}, {40, 50, 60}};
     System.out.println(Arrays.toString(matrix[0]));
     System.out.println(Arrays.toString(matrix[1]));
+    
     matrix[0] = new double[]{1, 2, 3, 4, 5};
-    System.out.println(Arrays.toString(matrix[0]));   
+    System.out.println(Arrays.toString(matrix[0]));
+    
+    double matrix2[][] = new double[2][3];
+    for (int i = 0; i < matrix2.length; i++) {
+      for (int j = 0; j < matrix2[i].length; j++) {
+        matrix2[i][j] = (i * matrix2[i].length + j+1) * 10; 
+      }
+    }
+    System.out.println("********************");
+    for (int i = 0; i < matrix2.length; i++) {
+      for (int j = 0; j < matrix2[i].length; j++) {
+        System.out.print(matrix2[i][j] + ", "); 
+      }
+      System.err.println();
+    }
   } 
 }
