@@ -4,6 +4,31 @@ public class Cliente {
   private double renda;
   private char sexo;
   private int anoNascimento;
+  private boolean especial;
+
+  public boolean isEspecial() {
+    return especial;
+  }
+
+  public void setEspecial(boolean especial) {
+    this.especial = especial;
+  }
+
+  //Constructor
+  public Cliente(){
+    System.out.println("Criando cliente com Construtor sem parametro...");
+    double aleatorio = Math.random();
+    if(aleatorio > 0.5)
+      especial = true;
+  }
+
+  public Cliente(double renda, char sexo) {
+    this();
+    System.out.println("Criando cliente com Contrutor com parametro****");
+    setRenda(renda);
+    //this.renda = renda;
+    this.sexo = sexo;
+  }
 
   public double getRenda(){
     return renda;
