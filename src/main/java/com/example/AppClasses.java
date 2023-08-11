@@ -12,7 +12,7 @@ public class AppClasses {
     System.out.println("Ano Nascimento: " + cliente1.getAnoNascimento()); 
     System.out.println("Especial: " + cliente1.isEspecial());     
     
-    Cliente cliente2 = new Cliente(-3000, 'F');
+    Cliente cliente2 = new Cliente(3000, 'F');
     // cliente2.setRenda(7800.92);
     // cliente2.setSexo('F');
     cliente2.setAnoNascimento(1994);
@@ -21,6 +21,6 @@ public class AppClasses {
     System.out.println("Sexo: " + cliente2.getSexo());
     System.out.println("Ano Nascimento: " + cliente2.getAnoNascimento());
     System.out.println("Especial: " + cliente2.isEspecial());
-
+    //Fim  
   }
 }
