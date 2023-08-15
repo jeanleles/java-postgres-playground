@@ -1,10 +1,19 @@
 package com.example;
 
 public class Cliente {
+  private String nome;
   private double renda;
   private char sexo;
   private int anoNascimento;
   private boolean especial;
+
+  public String getNome() {
+    return nome;
+  }
+
+  public void setNome(String nome) {
+    this.nome = nome;
+  }
 
   public boolean isEspecial() {
     return especial;
