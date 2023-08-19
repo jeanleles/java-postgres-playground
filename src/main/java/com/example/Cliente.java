@@ -25,7 +25,7 @@ public class Cliente {
 
   //Constructor
   public Cliente(){
-    System.out.println("Criando cliente com Construtor sem parametro...");
+    //System.out.println("Criando cliente com Construtor sem parametro...");
     double aleatorio = Math.random();
     if(aleatorio > 0.5)
       especial = true;
@@ -33,7 +33,7 @@ public class Cliente {
 
   public Cliente(double renda, char sexo) {
     this();
-    System.out.println("Criando cliente com Contrutor com parametro****");
+    //System.out.println("Criando cliente com Contrutor com parametro****");
     setRenda(renda);
     //this.renda = renda;
     this.sexo = sexo;
