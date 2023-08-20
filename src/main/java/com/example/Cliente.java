@@ -66,4 +66,8 @@ public class Cliente {
   public void setAnoNascimento(int anoNascimento) {
     this.anoNascimento = anoNascimento;
   }
+
+  public String toString(){
+    return "Cliente: " + nome + ", Sexo: " + sexo;
+  }
 }
