@@ -20,11 +20,34 @@ public class App {
         try(var conn = getConnection()){
             carregarDriverJDBC();
             listarEstados(conn);
-            localizarEstado(conn, "PR");
+            localizarEstado(conn, "GO");
+                        
+            var marca = new Marca();
+            marca.setId(2L);
+
+            var produto = new Produto();
+            produto.setMarca(marca);
+            produto.setNome("Produto teste Novo");            
+            produto.setValor(300);
+
+            inserirProduto(conn, produto);
+
             listarDadosTabela(conn, "produto");
         } catch (SQLException e) {
             System.err.println("Não foi possível conectar ao banco de dados: " + e.getMessage());
         }        
+    }
+
+    private void inserirProduto(Connection conn, Produto produto) {
+        var sql = "insert into produto (nome, marca_id, valor) values (?, ?, ?)";
+        try (var statement = conn.prepareStatement(sql)) {
+            statement.setString(1, produto.getNome());
+            statement.setLong(2, produto.getMarca().getId());
+            statement.setDouble(3, produto.getValor());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("Erro na execução da consulta: " + e.getMessage());
+        }
     }
 
     private void listarDadosTabela(Connection conn, String tabela) {
